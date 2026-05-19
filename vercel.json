@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run build --workspace=@sarwa/storefront",
+  "outputDirectory": "apps/storefront/.next",
+  "installCommand": "npm install --legacy-peer-deps"
+}
