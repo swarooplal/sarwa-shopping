@@ -1,0 +1,38 @@
+{
+  "name": "sarwa-shoppingweb",
+  "private": false,
+  "packageManager": "npm@11.12.1",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "npm -r dev",
+    "build": "npm -r build",
+    "start": "turbo start",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "backend:seed": "turbo seed --filter=@sarwa/backend",
+    "backend:dev": "turbo dev --filter=@sarwa/backend",
+    "storefront:dev": "turbo dev --filter=@sarwa/storefront"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.5",
+      "@types/react-dom": "19.0.5"
+    }
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.14"
+  },
+  "workspaces": [
+    "apps/**",
+    "!apps/backend/.medusa/**"
+  ],
+  "overrides": {
+    "ajv": "^8.0.0"
+  },
+  "dependencies": {
+    "react-aria": "^3.48.0"
+  }
+}
