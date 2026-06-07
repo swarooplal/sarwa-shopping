@@ -1,19 +1,19 @@
 {
-  "name": "sarwa-shoppingweb",
+  "name": "sarwa-shopping-monorepo",
   "private": false,
-  "packageManager": "npm@11.12.1",
+  "packageManager": "pnpm@10.11.1",
   "engines": {
     "node": ">=20"
   },
   "scripts": {
-    "dev": "npm -r dev",
-    "build": "npm -r build",
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
     "start": "turbo start",
     "lint": "turbo lint",
     "test": "turbo test",
-    "backend:seed": "turbo seed --filter=@sarwa/backend",
-    "backend:dev": "turbo dev --filter=@sarwa/backend",
-    "storefront:dev": "turbo dev --filter=@sarwa/storefront"
+    "backend:seed": "turbo seed --filter=@dtc/backend",
+    "backend:dev": "turbo dev --filter=@dtc/backend",
+    "storefront:dev": "turbo dev --filter=@dtc/storefront"
   },
   "pnpm": {
     "overrides": {
@@ -24,15 +24,5 @@
   "devDependencies": {
     "prettier": "^3.2.5",
     "turbo": "^2.0.14"
-  },
-  "workspaces": [
-    "apps/**",
-    "!apps/backend/.medusa/**"
-  ],
-  "overrides": {
-    "ajv": "^8.0.0"
-  },
-  "dependencies": {
-    "react-aria": "^3.48.0"
   }
 }
