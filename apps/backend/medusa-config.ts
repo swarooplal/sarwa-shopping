@@ -18,7 +18,7 @@ module.exports = defineConfig({
     vite: (config) => {
       config.server = {
         ...config.server,
-        allowedHosts: [process.env.VITE_CORS!.split(",")],
+        allowedHosts: process.env.VITE_CORS!?.split(",") ?? [],
       };
       return config;
     },
