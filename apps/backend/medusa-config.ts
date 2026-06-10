@@ -13,5 +13,14 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     },
     redisUrl: process.env.REDIS_URL!
-  }
+  },
+  admin: {
+    vite: (config) => {
+      config.server = {
+        ...config.server,
+        allowedHosts: [process.env.VITE_CORS!.split(",")],
+      };
+      return config;
+    },
+  },
 })
