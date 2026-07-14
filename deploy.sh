@@ -15,9 +15,9 @@ echo "Navigate to the project directory..."
 cd "/home/ubuntu/sarwa-shopping"
 
 echo "Fetching latest changes from main..."
-git checkout main
-git fetch --all
-git reset --hard origin/main
+/usr/bin/git checkout main
+/usr/bin/git fetch --all
+/usr/bin/git reset --hard origin/main
 
 echo "Installing dependencies..."
 /home/ubuntu/.nvm/versions/node/v24.14.0/bin/pnpm install
