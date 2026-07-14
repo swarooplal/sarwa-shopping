@@ -4,7 +4,7 @@
 set -e
 
 echo "Navigate to the project directory..."
-cd "~/sarwa-shopping/"
+cd "/home/ubuntu/sarwa-shopping"
 
 echo "Fetching latest changes from main..."
 git checkout main
