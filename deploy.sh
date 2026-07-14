@@ -5,9 +5,11 @@ set -e
 
 # 👇 1. LOAD ENVIRONMENT PATHS FOR NON-INTERACTIVE SSH
 # This ensures bash knows where Node, pnpm, and PM2 live.
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads NVM if you use it
-export PATH="/home/ubuntu/.nvm/versions/node/v24.14.0/bin/pnpm"
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads NVM if you use it
+# export PATH="/home/ubuntu/.nvm/versions/node/v24.14.0/bin/pnpm"
+
+source "/home/ubuntu/.bashrc"
 
 echo "Navigate to the project directory..."
 cd "/home/ubuntu/sarwa-shopping"
