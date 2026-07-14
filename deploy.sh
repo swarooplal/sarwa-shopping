@@ -9,7 +9,7 @@ set -e
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads NVM if you use it
 # export PATH="/home/ubuntu/.nvm/versions/node/v24.14.0/bin/pnpm"
 
-source "/home/ubuntu/.bashrc"
+# source "/home/ubuntu/.bashrc"
 
 echo "Navigate to the project directory..."
 cd "/home/ubuntu/sarwa-shopping"
