@@ -3,13 +3,12 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# 👇 1. LOAD ENVIRONMENT PATHS FOR NON-INTERACTIVE SSH
-# This ensures bash knows where Node, pnpm, and PM2 live.
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # Loads NVM if you use it
-# export PATH="/home/ubuntu/.nvm/versions/node/v24.14.0/bin/pnpm"
+# 👇 1. LOAD NVM ENVIRONMENT (Fixes the /usr/bin/env node issue)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# source "/home/ubuntu/.bashrc"
+# 👇 2. INCLUDE STANDARD PATHS JUST IN CASE
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
 
 echo "Navigate to the project directory..."
 cd "/home/ubuntu/sarwa-shopping"
