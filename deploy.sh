@@ -18,7 +18,7 @@ git fetch --all
 git reset --hard origin/main
 
 echo "Installing dependencies..."
-pnpm install
+/home/ubuntu/.nvm/versions/node/v24.14.0/bin/pnpm install
 
 echo "Restarting API/Main process..."
 pm2 restart 0
@@ -28,7 +28,7 @@ pm2 stop 2
 
 echo "Building Storefront..."
 cd apps/storefront
-pnpm run build
+/home/ubuntu/.nvm/versions/node/v24.14.0/bin/pnpm run build
 
 echo "Restarting Storefront..."
 pm2 restart 2
