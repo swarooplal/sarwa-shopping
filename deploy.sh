@@ -3,12 +3,9 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# 👇 1. LOAD NVM ENVIRONMENT (Fixes the /usr/bin/env node issue)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# 👇 2. INCLUDE STANDARD PATHS JUST IN CASE
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+# FORCE HARDCODED PATHS FOR SYSTEM, NVM NODE, AND PNM GLOBAL BINARIES
+# This ensures "node", "git", "pnpm", and "pm2" are universally accessible
+export PATH="/home/ubuntu/.nvm/versions/node/v24.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 echo "Navigate to the project directory..."
 cd "/home/ubuntu/sarwa-shopping"
