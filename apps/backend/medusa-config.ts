@@ -1,4 +1,4 @@
-import { loadEnv, defineConfig } from '@medusajs/framework/utils'
+import { loadEnv, defineConfig, Modules } from '@medusajs/framework/utils'
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
@@ -25,10 +25,20 @@ module.exports = defineConfig({
   },
   modules: [
     {
-      resolve: "@medusajs/file-local",
+      key: Modules.FILE,
+      resolve: "@medusajs/medusa/file",
       options: {
-        upload_dir: "static",
-        backend_url: process.env.MEDUSA_BACKEND_URL || "http://localhost:9000",
+        providers: [
+          {
+            resolve: "@medusajs/medusa/file-local",
+            id: "local",
+            options: {
+              upload_dir: "static",
+              // Append /static so that generated links directly point to the file path on your server
+              backend_url: `${process.env.MEDUSA_BACKEND_URL}/static`,
+            },
+          },
+        ],
       },
     },
   ]
